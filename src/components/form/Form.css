@@ -1,0 +1,12 @@
+form {
+    padding-bottom: 2em;
+    display: flex;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+input {
+    margin-right: 5px;
+    width: 30px;
+    
+}

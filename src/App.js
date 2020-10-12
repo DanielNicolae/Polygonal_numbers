@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import InputValue from './components/form/Form';
+import DisplayNumbers from './components/calculate/DisplayNumbers';
+
 
 function App() {
+  // state
+  const [inputNumber, setInputNumber] = useState("");
+  const [numbers, setNumbers] = useState([]);
+  const [sides, setSides] = useState("");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-header">
+        <h1 className="App-title">Polygonal numbers</h1>
+        <p>Choose a number between 3 and 1,000,000.</p>
+        <InputValue sides={sides} setSides={setSides} inputNumber={inputNumber} setInputNumber={setInputNumber} numbers={numbers} setNumbers={setNumbers} />
+      </div>
+      <div className="App-content">
+        <DisplayNumbers sides={sides} numbers={numbers} />
+      </div>
     </div>
   );
 }
